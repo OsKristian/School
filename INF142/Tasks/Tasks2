@@ -1,0 +1,40 @@
+1)
+    a)
+        10 users.
+    b)
+        10% for anyone sends something at x
+    c)
+        Times ->
+        .1  .1  .9 = 0.9 S
+        .1  .9  .1 = 0.9 u
+        .9  .1  .1 = 0.9 m
+                   = 0.027
+    d)
+        General formula:
+        (N/n)*(P)pow(n)*(1-P)pow(N-n)
+        
+2)
+    Delays: Quing delay, propagation delay, processing delay, transmission delay.
+    Total: end to end delay
+    s = 2.5*10^8
+    dproe = 3msec
+    Ri = 2 Mbps
+    L = 1500 bl
+    A   ->  s1  ->  s2  ->  B
+d1=5000km, d2=4000km, d3=1000km.
+Distance/Propagation delay 
+d/s 
+Dtot = d1/s1 + l/R + dproc +
+       d2/s2 + l/R + dproc +
+       d3/s3 + l/R + dproc.
+3)
+    a)
+        (0 + L/R + 2(L/R) + 3(L/R) + ... + (N-1)(L/R))/N
+        =((N*(N-1))/2)*L/(N*R)
+        =((L*(N-1))/2R)
+    b)  
+        Same as above because transmission delay is less than average quing delay.
+
+
+
+

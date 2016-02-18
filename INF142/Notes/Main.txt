@@ -1,0 +1,51 @@
+Notes:
+    HTTP:
+        Request || response.
+        PC --> Request --> SERVER --> Response/Request --> PC --> ...
+        Request: ASCII(Human read) && HEADERS
+                GET, POST, HEAD...
+
+            GET     The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+            Contidional GET:
+                Goal: Don't send object if cache has up-to-date cached version
+            HEAD    Same as GET, but transfers the status line and header section only.
+  
+            POST    A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+
+            PUT     Replaces all current representations of the target resource with the uploaded content.
+  
+            DELETE      Removes all current representations of the target resource given by a URI.
+   
+            CONNECT     Establishes a tunnel to the server identified by a given URI.
+   
+            OPTIONS     Describes the communication options for the target resource.
+
+            TRACE       Performs a message loop-back test along the path to the target resource.
+    Cookies.
+        cookie header line of HTTP response message.
+        cookie header line in next HTTP request message.
+        cookie file kept on user's host, managed by user's browser.
+        back-end database at website.
+    Creates an ID for specified USER!.
+    
+    Cache:
+        User setting in browser:
+            Web accesses via cache.
+        Browser sends all HTTP requests to cache
+            Object in cachhe: cache
+                Returns object.
+            Else cache requests object from origin server, then returns object to client.
+        Cache acts as both client and server
+            server for original requesting client.
+            client to origin server
+        Typically cache is installed by ISP(university company, residential ISP).
+        Why web chaching?
+            Reduce responce time for client request.
+            and so on and so on.
+       
+FTP: File Transfer Protocol/ TO:Control Port 21. FROM:DataConnection Port 20.
+    User interface -> FTP client <-> FTP server
+    transfer file to/from remote host
+    client/server model
+    
+     
