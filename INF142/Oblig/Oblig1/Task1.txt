@@ -1,0 +1,10 @@
+Task 1.
+
+    Steps in communication between server 'S' and client 'C'.
+        S starts listening for init messages from C.
+        C sends establishcommunication message to S.
+        S gets the message and sends a positive responce to C.
+        Communication is then open.
+        Loop until exit.
+            C sends various commands with parameters
+            See: Add, subtract, sum, log. with numbers or null parimeteres.
