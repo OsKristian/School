@@ -1,0 +1,18 @@
+Suggestions for compulary exercise 3:
+       
+    -   Database integration:
+            We create a simple database containing some information, maybe gene related.
+            Their task is to use PHP to extract this information out of the database and present it on a "PHP website" that they have created
+            This will give them an look at what php is used for in one situation and what it can do, and should also be challanging enough for them to struggle with it.
+            Deliveries: 
+                A php script that gets information from a database.
+                A php site that presents the information given to them.
+            This might be too hard/we could give them some scripts to help them out.
+
+    -   Codecademy's PHP tutorials guide to php. Pretty long and should give them a deep understanding of what php can do on the front end of the development.
+        
+    .
+    .
+    .
+    more
+        

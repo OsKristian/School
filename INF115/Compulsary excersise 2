@@ -1,0 +1,113 @@
+A genome is the term given to an organism's complete set of DNA.
+Genomes are organised into discrete structures called chromosomes (for example the human genome contains 23 pairs of chromosomes),
+each composed entirely from long sequences of just four possible nucleotides.
+
+Continuous sections of DNA that code for amino acid sequences are called exons.
+As we learned in the first exercise, this means that the nucleotide sequence
+which make up an exon, can also be considered sequences of codons.
+
+Groups of exons are further organised into particular discrete regions of
+chromosomes, called genes.
+A single chromosome for example may contain many 1000’s of genes, each of which
+will typically contain 5­10 exons.
+Features on a chromosome such as exons, are usually distinguished by a start and
+stop coordinate, which is a simply a count.
+
+The exons within a particular gene can be though as modular functional units.
+They can be joined in a variety of combinations to produce a range of proteins.
+The amino acid sequence of the protein is directly determined by the nucleotide (or codon) sequence of the exons included in that particular combination. Each of these combinations of the exons within a gene is called an isoform. Typically these isoforms are created by concatenating the sequences of all of the exons in a given gene, except for one or two exons, which are excluded.
+
+To make things a little more complicated exons are separated by regions called introns, which are sequences of DNA that do not code for protein sequences (historically these regions were called “junk DNA”, which isn’t entirely accurate; but they are effectively discarded, or chopped out from the protein coding sequences). Below is an example of a gene with four exons, and three of the possible isoforms that could be obtained from this gene.
+
+gen_code-1.png
+The following exercise explores the use of entity relationship (ER) diagrams and normalisation in database design. Submit your answers as a pdf file before 10:00am on 11/04/2016. We recommend using using y­works (​http://live.yworks.com/graphity/​) to make ER diagrams (individual diagrams can be exported to png, which can then be combined in to a single pdf document). Please highlight primary keys with a “#” symbol. For example:
+
+
+ent.png
+Where we ask you to produce a table output, please use the following format (again use “#” to denote a primary key and “*” to denote a foreign key). For example:
+
+Table_1(#Attribute_1,Attribute_2,Attribute_3)
+Table_2(#Attribute_1,Attribute_3*)
+
+1) (10%)
+
+Using the four tables from compulsory exercise 1, reverse engineer an ER diagram to represent the entities and their attributes. Highlight primary keys, and select appropriate relationships between the entities.
+
+2) (20%)
+
+A database stores the information about the relations between Genes, Exons and Isoforms. A Gene has a unique gene_id and a name, the database will also store some information about the location of the gene, including the name of the chromosome on which it is located and the start and stop coordinate of the gene on the chromosome. Genes are always located on just one chromosome. Each gene contains one or more Exons, each with a unique exon_id and a start and stop coordinate. Every gene has one or more Isoforms, each with a unique isoform_id and an isoform_name, each Isoform is created from one or more of the Exons of a particular gene.
+
+i) Identify the entities in the database description above.
+
+ii) Produce an ER diagram showing the relations between these entities, highlight primary keys, and select appropriate relationships between the entities.
+
+iii) Convert the ER diagram in 2.ii to a set of tables conforming to the third normal form, include appropriate primary and foreign keys.
+
+3) (25%)
+
+Gene nomenclature can be confusing because the experimental nature of gene discovery can lead to the same gene being “discovered” and named a number of times by separate individuals. At some point the scientists will realise that they all discovered the same gene, and a standardised name will be agreed upon, along with a new identifier called the gene symbol. All of the other names will be recorded as official synonyms for this gene to allow backward compatibility with the literature that has previously been published.
+
+A database will record the following information about the genome of a particular species:
+
+Gene_symbol, Offical_name, Synonyms, Chromosome_name, Chromosome_length, Start_coordinate, End_coordinate, References.
+
+A typical example of this data is as follows:
+
+Gene_symbol: “SHH”
+Offical_name: “sonic hedgehog”
+Synonyms: “HHG1”, “MCOPCB5”, “SMMCI”, “TPT”, “TPTPS”
+Chromosome_name: “Chr5”
+Chromosome_length: 153573022
+Start_coordinate: 28456815
+End_coordinate: 28467256
+References: “J:227320 Holtz AM, et al., Secreted HHIP1 interacts with heparan sulfate and regulates Hedgehog ligand localization and function. J Cell Biol. 2015”, “J:13476 Dickie MM, Hemimelic extra toes, Hx. Mouse News Lett. 1968”
+
+The synonym field contains a list of all of the previously used names. The References field contains a list of all of the publications that have cited this gene (each composed of: reference id, authors, title, journal, year published). A publication can cite more than one gene. Assume for this exercise that all genes have at least one synonym.
+
+i) Identify the entities in the database description above.
+
+ii) Create an ER diagram to represent the relations between the entities that you identified in question 3.i, specify the primary keys and select appropriate relationships between the entities.
+
+iii) Convert the ER diagram in 3.ii to a set of tables conforming to the first normal form, but not the second normal form. Highlight primary keys and foreign keys.
+
+iv) Further develop the table structure from 3.iii so that it conforms to Boyce Codd normal form (BCNF), again highlight primary and foreign keys.
+
+4) (20%)
+
+Global_cruises offers luxury cruises worldwide, and is in need of a new system
+to handle ships, passengers and routes. The system must store information about
+each cruise ship. Each ship has a unique name. In addition, the maximum number
+of passengers will be stored for each ship. A cruise starts on a particular date
+from a particular port and follows a specific​route.
+The system must store which harbours a cruise visits on each day. It must be possible to find out which date a cruise arrives at and leaves a particular port. For every port the town name and telephone number of the port office should be stored. Every cruise ship has a number of cabins (rooms) in 4 to 8 decks (floors). A cabin is identified by a deck number and a serial number, for example "4­17" means cabin 17 on deck 4. The cabins are assigned to different price categories depending on the number of beds and location on the ship. The system must also store information about the passengers and their reservations. Every passenger gets a unique email address, name, gender, date of birth and a telephone number. A reservation always applies to one particular cruise, but multiple passengers can be entered on one reservation. Passengers can book a number of cabins in a single reservation.
+
+Create a data model (E / R diagram) for Global_cruises, specify the primary keys and select appropriate relationships between the entities.
+
+5) (25%)
+
+A company rents out containers, and maintains the following database. Primary keys are marked with a hash (“#”) and foreign keys are marked with an asterisk (“*”):
+
+Container_type (#Type_id, Type_name, Max_weight, Cubic_quantity, Nightly_rate)
+Container (#Container_number, Type_id*)
+Customer (#Telephone_number, Address)
+Assignment (#Assignment_number, Telephone_number*, Container_number*, Start_date, End_date)
+
+
+The company wishes to expand so that it can provide transport services for the containers. The company will purchase a number of trucks and the various assignments will be continuously distributed on the available transportation. Multiple trucks can be involved in the transportation of one assignment. The following table has been proposed to extend the database in order to handle the new transportation requirements:
+
+Truck (Registration_number, Registration_year, Model, Maximum_weight, Assignment_number*)
+
+An example row is as follows:
+( 'LY12345', 2012, 'Volvo XL', 8500, 3)
+
+This means that the truck with registration number LY12345 was first registered in 201 and was used in assignment 3. This truck is the model Volvo XL, and this model has a maximum weight 8500 kg.
+
+i) Explain first why this solution proposed by the Truck table above is problematic.
+
+ii) Write down the functional dependencies of the Truck table.
+
+iii) Determine the candidate key(s) for the Truck table.
+
+iv) Perform normalization to BCNF for the whole table (the original table
+expanded to incorporate transportation). Show primary keys and foreign keys in
+the final result.

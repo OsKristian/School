@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Server {
     public static void main(String[] args) throws Exception {
-        ArrayList<String> log = new ArrayList<>();
+        ArrayList<String> log = new ArrayList<String>();
         String[] clientPackage;
         int number = 0;
         ServerSocket welcomeSocket = new ServerSocket(5600);

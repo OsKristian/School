@@ -1,0 +1,19 @@
+Areal under curve.
+
+a -> b (Continuety is a must.)
+A = Areal under curve.
+
+Split into smaller paths.
+Smallest areal approx.
+Highest areal approx.
+
+X0,X1,X2,X3,X4,..,Xn-2,Xn-1,Xn.
+
+partisjon oppdeling av [a,b]
+
+p = {X0 = a, XX1,X2,...,Xn=b}
+delta(X1) = Xi - Xi-1, i=1,...,n
+
+nedre arealsapproksimasjon:
+l(f,p) = "nedre" areal = A(n,1) + A(n,2) + ... + A(N,n)
+= 0x1*f(l1) + delta(x2) * f(l2) + ... + delta(xn)f(Ln)
